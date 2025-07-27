@@ -1,0 +1,80 @@
+<!-- Dhay - 064 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomBrain</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+     <!-- Main title at the top of the page -->
+
+     <h1>BoomBrain</h1>
+     <!-- Welcome screen where the player enters their name -->
+
+     <div id="welcome-screen">
+        <h2>Welcome to the BoomBrain, who's playing?!</h2>
+        <input type="text" id="username" placeholder="Enter your name">
+        <button onclick="submitName()">Login</button>
+     </div>
+     <!-- Game selection menu, hidden at first -->
+
+     <div id="game-menu" style="display: none;">
+        <h2>Welcome <span id="player-name"></span>, choose your game...</h2>
+        <div class="game-selection">
+            <!-- Option for Number Guessing Game -->
+            <div class="game-option" onclick="showGame('number-game')">
+                <h3>Number Guessing Game</h3>
+                <p>Guess the 4-digit code within 40 seconds!</p>
+            </div>
+             <!-- Option for Letter Sequence Game -->
+            <div class="game-option" onclick="showGame('letter-game')">
+                <h3>Letter Sequence Game</h3>
+                <p>Match the letters in sequence within 30 seconds!</p>
+            </div>
+        </div>
+     </div>
+     <!-- Number Guessing Game interface -->
+     <div id="number-game" class="game-container" style="display: none;">
+        <h2>Number Guessing Game</h2>
+        <div id="number-input">
+            <input type="text" maxlength="1" class="digit" data-index="0">
+            <input type="text" maxlength="1" class="digit" data-index="1">
+            <input type="text" maxlength="1" class="digit" data-index="2">
+            <input type="text" maxlength="1" class="digit" data-index="3">
+        </div>
+        <div id="number-timer-bar" class="timer-bar"></div>
+        <button id="start-number-game">Start Game</button>
+        <button id="reset-number-game" onclick="resetNumberGame()" style="display: none;">Reset</button>
+        <button onclick="returnToMenu()" class="menu-button">Return to Menu</button>
+     </div>
+     <!-- Letter Sequence Game interface -->
+     <div id="letter-game" class="game-container" style="display: none;">
+        <h2>Letter Sequence Game</h2>
+        <div id="letter-grid" class="grid"></div>
+        <div id="letter-timer-bar" class="timer-bar"></div>
+        <button id="start-letter-game">Start Game</button>
+        <button onclick="returnToMenu()" class="menu-button">Return to Menu</button>
+     </div>
+     <!-- Popup message shown when the user wins -->
+     <div id="win-popup" class="popup" style="display: none;">
+        <h2>Congratulations!</h2>
+        <p>You won!</p>
+        <button onclick="restartGame()">Play Again</button>
+        <button onclick="returnToMenu()">Return to Menu</button>
+     </div>
+
+     <!-- Footer section at the bottom -->
+
+     <footer>
+        <p>&copy; 2025 BoomBrain. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:Busalehm@rcjy.edu.sa">Contact</a>
+        </div>
+      </footer>
+     <!-- Link to the JavaScript file -->
+     <script src="script.js"></script>
+
+</body>
+</html>
